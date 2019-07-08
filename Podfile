@@ -7,6 +7,6 @@ target 'Advice' do
 
   # Pods for Advice
 
-    pod 'Alamofire'
+    pod 'Alamofire'	
 
 end

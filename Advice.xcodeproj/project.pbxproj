@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		7D262B8022B29F7B00DEB3FE /* Advice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D262B7E22B29F7B00DEB3FE /* Advice.xcdatamodeld */; };
 		7D262B8222B29F7C00DEB3FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D262B8122B29F7C00DEB3FE /* Assets.xcassets */; };
 		7D262B8522B29F7C00DEB3FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D262B8322B29F7C00DEB3FE /* LaunchScreen.storyboard */; };
+		7D4C279322B7DB78002625CC /* Advice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C279222B7DB78002625CC /* Advice.swift */; };
+		7DD9BD4522C3CB51000F039D /* YodaTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9BD4422C3CB51000F039D /* YodaTranslation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7D262B8122B29F7C00DEB3FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D262B8422B29F7C00DEB3FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D262B8622B29F7C00DEB3FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4C279222B7DB78002625CC /* Advice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advice.swift; sourceTree = "<group>"; };
+		7DD9BD4422C3CB51000F039D /* YodaTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YodaTranslation.swift; sourceTree = "<group>"; };
 		8D575004DD2DE4FB9A7143C9 /* Pods_Advice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Advice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E35FC0F494BA38C535C328 /* Pods-Advice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Advice.release.xcconfig"; path = "Target Support Files/Pods-Advice/Pods-Advice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +52,6 @@
 				0D7E62792D92BE2C0B3BF484 /* Pods-Advice.debug.xcconfig */,
 				B9E35FC0F494BA38C535C328 /* Pods-Advice.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +91,8 @@
 				7D262B8322B29F7C00DEB3FE /* LaunchScreen.storyboard */,
 				7D262B8622B29F7C00DEB3FE /* Info.plist */,
 				7D262B7E22B29F7B00DEB3FE /* Advice.xcdatamodeld */,
+				7D4C279222B7DB78002625CC /* Advice.swift */,
+				7DD9BD4422C3CB51000F039D /* YodaTranslation.swift */,
 			);
 			path = Advice;
 			sourceTree = "<group>";
@@ -167,16 +172,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Advice/Pods-Advice-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Advice/Pods-Advice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Advice/Pods-Advice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -214,7 +214,9 @@
 			files = (
 				7D262B8022B29F7B00DEB3FE /* Advice.xcdatamodeld in Sources */,
 				7D262B7A22B29F7B00DEB3FE /* ViewController.swift in Sources */,
+				7DD9BD4522C3CB51000F039D /* YodaTranslation.swift in Sources */,
 				7D262B7822B29F7B00DEB3FE /* AppDelegate.swift in Sources */,
+				7D4C279322B7DB78002625CC /* Advice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
