@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     }
     
     func getAdviceMethod() {
+        
         let session = URLSession(configuration: URLSessionConfiguration.default)
         guard let url = URL(string: "https://api.adviceslip.com/advice") else {
             print("Error with the URL")
