@@ -60,7 +60,6 @@ class ViewController: UIViewController {
         dataTask.resume()
     }
     
-    
     func getAdviceMethod(completion: @escaping (String?) -> ()) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
