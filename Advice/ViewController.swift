@@ -38,13 +38,25 @@ class ViewController: UIViewController {
         
         //Data task
         let dataTask = session.dataTask(with: request) { (data, response, error) in
-            
-            guard let yodaJSON = try? JSONSerialization.jsonObject(with: data!, options: []) else {
-                print("No Yoda JSON")
-                return
+            if error != nil {
+                print(error!)
+            } else {
+                do {
+                    
+                    let yodaJSON = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any]
+                    let yodasVersion = yodaJSON?["contents"] as! [String:Any]
+                    //print(yodasVersion)
+                    let normalText = yodasVersion["text"] as! String
+                    print(normalText)
+                    let translatedYodaSpeak = yodasVersion["translated"] as! String
+                    print(translatedYodaSpeak)
+                    
+                    DispatchQueue.main.async {
+                        self.mainLabel.text = translatedYodaSpeak
+                    }
+                    
+                }
             }
-            
-            print(yodaJSON)
         }
         dataTask.resume()
     }
