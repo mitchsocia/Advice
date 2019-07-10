@@ -43,6 +43,7 @@ class ViewController: UIViewController {
                 print("No Yoda JSON")
                 return
             }
+            
             print(yodaJSON)
         }
         dataTask.resume()
