@@ -11,8 +11,6 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    //var advice: Advice?
-    
     @IBOutlet weak var mainLabel: UILabel!
     
     override func viewDidLoad() {
@@ -42,9 +40,11 @@ class ViewController: UIViewController {
                 print(error!)
             } else {
                 do {
-                    
                     let yodaJSON = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any]
-                    let yodasVersion = yodaJSON?["contents"] as! [String:Any]
+                    guard let yodasVersion = yodaJSON?["contents"] as? [String:Any] else {
+                        print("NO JSON")
+                        return
+                    }
                     //print(yodasVersion)
                     let normalText = yodasVersion["text"] as! String
                     print(normalText)
@@ -104,12 +104,6 @@ class ViewController: UIViewController {
             //step 5: now that we have the ingredients to make a new object, let's create one!
             let wonderfulAdvice = Advice(advice: advice, slipID: slipID)
             completion(wonderfulAdvice.advice)
-            
-            //                                    DispatchQueue.main.async {
-            //
-            //                                        self.mainLabel.text = wonderfulAdvice.advice
-            //
-            //                                    }
             
         }
         
