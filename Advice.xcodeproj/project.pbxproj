@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CB5137334512C2DF682B28A /* Pods_Advice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D575004DD2DE4FB9A7143C9 /* Pods_Advice.framework */; };
+		7D16A25F22FDF65D00D8AE85 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16A25E22FDF65D00D8AE85 /* Networking.swift */; };
 		7D262B7822B29F7B00DEB3FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D262B7722B29F7B00DEB3FE /* AppDelegate.swift */; };
 		7D262B7A22B29F7B00DEB3FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D262B7922B29F7B00DEB3FE /* HomeViewController.swift */; };
 		7D262B7D22B29F7B00DEB3FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D262B7B22B29F7B00DEB3FE /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0D7E62792D92BE2C0B3BF484 /* Pods-Advice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Advice.debug.xcconfig"; path = "Target Support Files/Pods-Advice/Pods-Advice.debug.xcconfig"; sourceTree = "<group>"; };
+		7D16A25E22FDF65D00D8AE85 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7D262B7422B29F7B00DEB3FE /* Advice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Advice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D262B7722B29F7B00DEB3FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D262B7922B29F7B00DEB3FE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -63,9 +65,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D16A25D22FDF64900D8AE85 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7D16A25E22FDF65D00D8AE85 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		7D262B6B22B29F7B00DEB3FE = {
 			isa = PBXGroup;
 			children = (
+				7D16A25D22FDF64900D8AE85 /* Networking */,
 				7D262B7622B29F7B00DEB3FE /* Advice */,
 				7D262B7522B29F7B00DEB3FE /* Products */,
 				01EE2D3235FABDAF2010D607 /* Pods */,
@@ -215,6 +226,7 @@
 				7D262B8022B29F7B00DEB3FE /* Advice.xcdatamodeld in Sources */,
 				7D262B7A22B29F7B00DEB3FE /* HomeViewController.swift in Sources */,
 				7DD9BD4522C3CB51000F039D /* YodaTranslation.swift in Sources */,
+				7D16A25F22FDF65D00D8AE85 /* Networking.swift in Sources */,
 				7D262B7822B29F7B00DEB3FE /* AppDelegate.swift in Sources */,
 				7D4C279322B7DB78002625CC /* Advice.swift in Sources */,
 			);
