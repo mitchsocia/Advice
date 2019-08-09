@@ -1,15 +1,6 @@
-//
-//  ViewController.swift
-//  Advice
-//
-//  Created by Mitchell Socia on 6/13/19.
-//  Copyright © 2019 Mitchell Socia. All rights reserved.
-//
-
 import UIKit
 
-// 🧹 Rename to something less generic
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var mainLabel: UILabel!
     
@@ -17,7 +8,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // 🧹  try not to use a force unwrap here, 🚫👐 show something else (an alert perhaps!?) if Advice is nil
-        getAdviceMethod { (advice) in
+        getAdvice { (advice) in
             self.getYoda(advice: advice!)
         }
     }
@@ -66,9 +57,8 @@ class ViewController: UIViewController {
     }
     
     
-    // 🧹 not common to have the word "Method" in a method, this can be removed!
     // 🏗 As mentioned with the getYoda method, move this and the Advice method into one single, separate class for now
-    func getAdviceMethod(completion: @escaping (String?) -> ()) {
+    func getAdvice(completion: @escaping (String?) -> ()) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         guard let url = URL(string: "https://api.adviceslip.com/advice") else {
