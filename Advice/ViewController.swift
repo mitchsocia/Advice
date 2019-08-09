@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 🧹 Rename to something less generic
 class ViewController: UIViewController {
     
     @IBOutlet weak var mainLabel: UILabel!
@@ -15,12 +16,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 🧹  try not to use a force unwrap here, 🚫👐 show something else (an alert perhaps!?) if Advice is nil
         getAdviceMethod { (advice) in
             self.getYoda(advice: advice!)
         }
-        
     }
     
+    // 🏗 Move this and the Advice method into one single, separate class for now (you can call it NetworkingManager or AdviceService for now). This will start to get at the concept of a "Networking" layer, and removing methods that make api calls from your ViewControllers. Hooking things back up might throw you for a loop, but it's a great exercise
     func getYoda(advice: String) {
         
         //URL Components:
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
                 print(error!)
             } else {
                 do {
+        // 🧹 This "do" block can be removed if you make this next line a guard statement. (guard let yodaJSON = ...)
+        // 🚧 this whole block of code looks like it does something specific: parse data into a string. This code should be in its own method: something like: yodaTranslation(from data: Data?) -> YodaTranslation
                     let yodaJSON = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any]
                     guard let yodasVersion = yodaJSON?["contents"] as? [String:Any] else {
                         print("NO JSON")
@@ -50,6 +54,7 @@ class ViewController: UIViewController {
                     let translatedYodaSpeak = yodasVersion["translated"] as! String
                     print(translatedYodaSpeak)
                     
+                    // ⛑ refactor idea 3: add a completion handler to this getYoda method and move this UI-updating code into the caller's completion block (looks like you're calling this method in viewDidLoad: once you add a completion handler to this method you should be able to move it!
                     DispatchQueue.main.async {
                         self.mainLabel.text = translatedYodaSpeak
                     }
@@ -61,6 +66,8 @@ class ViewController: UIViewController {
     }
     
     
+    // 🧹 not common to have the word "Method" in a method, this can be removed!
+    // 🏗 As mentioned with the getYoda method, move this and the Advice method into one single, separate class for now
     func getAdviceMethod(completion: @escaping (String?) -> ()) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -70,7 +77,8 @@ class ViewController: UIViewController {
         }
         
         let dataTask = session.dataTask(with: url) { (data, response, error) in
-            
+
+            // 🚧 this whole completion block is parsing data into Advice. This would be perfect for a separate method, exactly as mentioned in the getYoda method above. Something like: advice(from data: Data?) -> Advice
             guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] else {
                 print("no json")
                 completion(nil)
